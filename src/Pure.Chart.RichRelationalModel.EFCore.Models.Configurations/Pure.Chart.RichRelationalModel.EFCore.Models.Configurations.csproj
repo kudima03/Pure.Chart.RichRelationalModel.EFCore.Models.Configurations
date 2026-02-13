@@ -17,6 +17,13 @@
     <PackageProjectUrl>https://github.com/kudima03/Pure.Chart.RichRelationalModel.EFCore.Models.Configurations</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Pure.Chart.RichRelationalModel.EFCore.Models" Version="0.1.0-preview.0.1.0" />
+    <PackageReference
+      Include="Pure.Chart.RichRelationalModel.EFCore.Models"
+      Version="0.1.0-preview.0.1.0"
+    />
+    <PackageReference
+      Include="Pure.Primitives.Abstractions.EFCore.Converters"
+      Version="0.1.0-preview.0.1.0"
+    />
   </ItemGroup>
 </Project>
