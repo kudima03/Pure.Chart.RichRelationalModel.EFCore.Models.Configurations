@@ -17,6 +17,12 @@ public sealed record AxisConfiguration : IEntityTypeConfiguration<AxisEFCoreMode
             .HasConversion(new GuidTypeConverter());
 
         _ = builder
+            .Property(x => x.ChartId)
+            .ValueGeneratedNever()
+            .IsRequired()
+            .HasConversion(new GuidTypeConverter());
+
+        _ = builder
             .Property(x => x.Legend)
             .IsRequired()
             .HasConversion(new StringTypeConverter())
