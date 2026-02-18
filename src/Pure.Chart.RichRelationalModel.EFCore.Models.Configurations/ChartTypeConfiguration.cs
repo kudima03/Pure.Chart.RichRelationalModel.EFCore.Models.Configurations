@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Pure.Primitives.Abstractions.EFCore.Converters;
+using Pure.Primitives.Abstractions.EFCore.ValueComparers;
 
 namespace Pure.Chart.RichRelationalModel.EFCore.Models.Configurations;
 
@@ -11,17 +12,19 @@ public sealed record ChartTypeConfiguration
     {
         _ = builder.HasKey(x => x.Id);
 
-        _ = builder
+        builder
             .Property(x => x.Id)
             .ValueGeneratedNever()
             .IsRequired()
-            .HasConversion(new GuidTypeConverter());
+            .HasConversion(new GuidTypeConverter())
+            .Metadata.SetValueComparer(new GuidValueComparer());
 
-        _ = builder
+        builder
             .Property(x => x.Name)
             .IsRequired()
             .HasConversion(new StringTypeConverter())
-            .HasMaxLength(64);
+            .HasMaxLength(64)
+            .Metadata.SetValueComparer(new StringValueComparer());
 
         _ = builder.HasIndex(x => x.Name).IsUnique();
     }
