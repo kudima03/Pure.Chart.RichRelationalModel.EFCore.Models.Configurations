@@ -42,11 +42,11 @@ public sealed record ChartConfiguration : IEntityTypeConfiguration<ChartEFCoreMo
         _ = builder
             .HasOne(x => x.XAxisNavigation)
             .WithOne()
-            .HasForeignKey<AxisEFCoreModel>(x => x.ChartId);
+            .HasForeignKey<ChartEFCoreModel>(x => x.XAxisId);
 
         _ = builder
             .HasOne(x => x.YAxisNavigation)
             .WithOne()
-            .HasForeignKey<AxisEFCoreModel>(x => x.ChartId);
+            .HasForeignKey<ChartEFCoreModel>(x => x.YAxisId);
     }
 }
