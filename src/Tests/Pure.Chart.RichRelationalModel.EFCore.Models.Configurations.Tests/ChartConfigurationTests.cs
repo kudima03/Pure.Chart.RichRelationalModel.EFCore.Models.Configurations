@@ -30,98 +30,126 @@ public sealed record ChartConfigurationTests
     [Fact]
     public void IdIsRequired()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Id))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Id)
+        )!;
         Assert.False(property.IsNullable);
     }
 
     [Fact]
     public void IdValueGeneratedNever()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Id))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Id)
+        )!;
         Assert.Equal(ValueGenerated.Never, property.ValueGenerated);
     }
 
     [Fact]
     public void IdHasGuidTypeConverter()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Id))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Id)
+        )!;
         _ = Assert.IsType<GuidTypeConverter>(property.GetValueConverter());
     }
 
     [Fact]
     public void IdHasGuidValueComparer()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Id))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Id)
+        )!;
         _ = Assert.IsType<GuidValueComparer>(property.GetValueComparer());
     }
 
     [Fact]
     public void TitleIsRequired()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Title))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Title)
+        )!;
         Assert.False(property.IsNullable);
     }
 
     [Fact]
     public void TitleHasMaxLength64()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Title))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Title)
+        )!;
         Assert.Equal(64, property.GetMaxLength());
     }
 
     [Fact]
     public void TitleHasStringTypeConverter()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Title))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Title)
+        )!;
         _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
     }
 
     [Fact]
     public void TitleHasStringValueComparer()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Title))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Title)
+        )!;
         _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
     }
 
     [Fact]
     public void DescriptionIsRequired()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Description))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Description)
+        )!;
         Assert.False(property.IsNullable);
     }
 
     [Fact]
     public void DescriptionHasStringTypeConverter()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Description))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Description)
+        )!;
         _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
     }
 
     [Fact]
     public void DescriptionHasStringValueComparer()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.Description))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.Description)
+        )!;
         _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
     }
 
     [Fact]
     public void TypeIdIsRequired()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.TypeId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.TypeId)
+        )!;
         Assert.False(property.IsNullable);
     }
 
     [Fact]
     public void TypeIdHasGuidTypeConverter()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.TypeId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.TypeId)
+        )!;
         _ = Assert.IsType<GuidTypeConverter>(property.GetValueConverter());
     }
 
     [Fact]
     public void TypeIdHasGuidValueComparer()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(ChartEFCoreModel.TypeId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartEFCoreModel.TypeId)
+        )!;
         _ = Assert.IsType<GuidValueComparer>(property.GetValueComparer());
     }
 

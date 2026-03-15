@@ -56,56 +56,72 @@ public sealed record AxisConfigurationTests
     [Fact]
     public void ChartIdIsRequired()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.ChartId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.ChartId)
+        )!;
         Assert.False(property.IsNullable);
     }
 
     [Fact]
     public void ChartIdValueGeneratedNever()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.ChartId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.ChartId)
+        )!;
         Assert.Equal(ValueGenerated.Never, property.ValueGenerated);
     }
 
     [Fact]
     public void ChartIdHasGuidTypeConverter()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.ChartId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.ChartId)
+        )!;
         _ = Assert.IsType<GuidTypeConverter>(property.GetValueConverter());
     }
 
     [Fact]
     public void ChartIdHasGuidValueComparer()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.ChartId))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.ChartId)
+        )!;
         _ = Assert.IsType<GuidValueComparer>(property.GetValueComparer());
     }
 
     [Fact]
     public void LegendIsRequired()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.Legend))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.Legend)
+        )!;
         Assert.False(property.IsNullable);
     }
 
     [Fact]
     public void LegendHasMaxLength64()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.Legend))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.Legend)
+        )!;
         Assert.Equal(64, property.GetMaxLength());
     }
 
     [Fact]
     public void LegendHasStringTypeConverter()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.Legend))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.Legend)
+        )!;
         _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
     }
 
     [Fact]
     public void LegendHasStringValueComparer()
     {
-        IMutableProperty property = _entityType.FindProperty(nameof(AxisEFCoreModel.Legend))!;
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(AxisEFCoreModel.Legend)
+        )!;
         _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
     }
 
