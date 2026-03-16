@@ -23,7 +23,7 @@ public sealed record ChartConfigurationTests
     {
         IMutableKey? pk = _entityType.FindPrimaryKey();
         Assert.NotNull(pk);
-        _ = Assert.Single(pk!.Properties);
+        _ = Assert.Single(pk.Properties);
         Assert.Equal(nameof(ChartEFCoreModel.Id), pk.Properties[0].Name);
     }
 
@@ -162,7 +162,7 @@ public sealed record ChartConfigurationTests
                 fk.PrincipalEntityType.ClrType == typeof(ChartTypeEFCoreModel)
             );
         Assert.NotNull(fk);
-        _ = Assert.Single(fk!.Properties);
+        _ = Assert.Single(fk.Properties);
         Assert.Equal(nameof(ChartEFCoreModel.TypeId), fk.Properties[0].Name);
     }
 
@@ -175,7 +175,7 @@ public sealed record ChartConfigurationTests
                 fk.Properties.Any(p => p.Name == nameof(ChartEFCoreModel.XAxisId))
             );
         Assert.NotNull(fk);
-        Assert.True(fk!.IsUnique);
+        Assert.True(fk.IsUnique);
         Assert.Equal(typeof(AxisEFCoreModel), fk.PrincipalEntityType.ClrType);
     }
 
@@ -188,7 +188,7 @@ public sealed record ChartConfigurationTests
                 fk.Properties.Any(p => p.Name == nameof(ChartEFCoreModel.YAxisId))
             );
         Assert.NotNull(fk);
-        Assert.True(fk!.IsUnique);
+        Assert.True(fk.IsUnique);
         Assert.Equal(typeof(AxisEFCoreModel), fk.PrincipalEntityType.ClrType);
     }
 }

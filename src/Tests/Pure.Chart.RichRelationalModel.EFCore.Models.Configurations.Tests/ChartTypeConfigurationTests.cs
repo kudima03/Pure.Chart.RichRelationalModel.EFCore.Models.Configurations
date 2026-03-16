@@ -23,7 +23,7 @@ public sealed record ChartTypeConfigurationTests
     {
         IMutableKey? pk = _entityType.FindPrimaryKey();
         Assert.NotNull(pk);
-        _ = Assert.Single(pk!.Properties);
+        _ = Assert.Single(pk.Properties);
         Assert.Equal(nameof(ChartTypeEFCoreModel.Id), pk.Properties[0].Name);
     }
 
@@ -108,6 +108,6 @@ public sealed record ChartTypeConfigurationTests
                 i.Properties.Any(p => p.Name == nameof(ChartTypeEFCoreModel.Name))
             );
         Assert.NotNull(index);
-        Assert.True(index!.IsUnique);
+        Assert.True(index.IsUnique);
     }
 }

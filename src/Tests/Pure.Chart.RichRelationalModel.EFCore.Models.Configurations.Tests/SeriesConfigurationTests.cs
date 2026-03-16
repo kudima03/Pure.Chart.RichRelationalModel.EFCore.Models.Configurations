@@ -21,7 +21,7 @@ public sealed record SeriesConfigurationTests
     {
         IMutableKey? pk = _entityType.FindPrimaryKey();
         Assert.NotNull(pk);
-        _ = Assert.Single(pk!.Properties);
+        _ = Assert.Single(pk.Properties);
         Assert.Equal(nameof(SeriesEFCoreModel.Id), pk.Properties[0].Name);
     }
 
