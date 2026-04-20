@@ -12,7 +12,9 @@ public sealed record ChartSeriesConfigurationTests
     public ChartSeriesConfigurationTests()
     {
         ModelBuilder modelBuilder = new ModelBuilder();
-        new ChartSeriesConfiguration().Configure(modelBuilder.Entity<ChartSeriesEFCoreModel>());
+        new ChartSeriesConfiguration().Configure(
+            modelBuilder.Entity<ChartSeriesEFCoreModel>()
+        );
         _entityType = modelBuilder.Model.FindEntityType(typeof(ChartSeriesEFCoreModel))!;
     }
 

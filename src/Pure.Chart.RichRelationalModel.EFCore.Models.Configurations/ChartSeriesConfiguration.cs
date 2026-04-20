@@ -5,7 +5,8 @@ using Pure.Primitives.Abstractions.EFCore.ValueComparers;
 
 namespace Pure.Chart.RichRelationalModel.EFCore.Models.Configurations;
 
-public sealed record ChartSeriesConfiguration : IEntityTypeConfiguration<ChartSeriesEFCoreModel>
+public sealed record ChartSeriesConfiguration
+    : IEntityTypeConfiguration<ChartSeriesEFCoreModel>
 {
     public void Configure(EntityTypeBuilder<ChartSeriesEFCoreModel> builder)
     {
