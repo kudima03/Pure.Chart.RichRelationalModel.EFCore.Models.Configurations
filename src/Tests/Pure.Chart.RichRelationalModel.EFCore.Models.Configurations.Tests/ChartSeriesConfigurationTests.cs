@@ -5,15 +5,17 @@ using Pure.Primitives.Abstractions.EFCore.ValueComparers;
 
 namespace Pure.Chart.RichRelationalModel.EFCore.Models.Configurations.Tests;
 
-public sealed record SeriesConfigurationTests
+public sealed record ChartSeriesConfigurationTests
 {
     private readonly IMutableEntityType _entityType;
 
-    public SeriesConfigurationTests()
+    public ChartSeriesConfigurationTests()
     {
         ModelBuilder modelBuilder = new ModelBuilder();
-        new SeriesConfiguration().Configure(modelBuilder.Entity<SeriesEFCoreModel>());
-        _entityType = modelBuilder.Model.FindEntityType(typeof(SeriesEFCoreModel))!;
+        new ChartSeriesConfiguration().Configure(
+            modelBuilder.Entity<ChartSeriesEFCoreModel>()
+        );
+        _entityType = modelBuilder.Model.FindEntityType(typeof(ChartSeriesEFCoreModel))!;
     }
 
     [Fact]
@@ -22,14 +24,14 @@ public sealed record SeriesConfigurationTests
         IMutableKey? pk = _entityType.FindPrimaryKey();
         Assert.NotNull(pk);
         _ = Assert.Single(pk.Properties);
-        Assert.Equal(nameof(SeriesEFCoreModel.Id), pk.Properties[0].Name);
+        Assert.Equal(nameof(ChartSeriesEFCoreModel.Id), pk.Properties[0].Name);
     }
 
     [Fact]
     public void IdIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Id)
+            nameof(ChartSeriesEFCoreModel.Id)
         )!;
         Assert.False(property.IsNullable);
     }
@@ -38,7 +40,7 @@ public sealed record SeriesConfigurationTests
     public void IdValueGeneratedNever()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Id)
+            nameof(ChartSeriesEFCoreModel.Id)
         )!;
         Assert.Equal(ValueGenerated.Never, property.ValueGenerated);
     }
@@ -47,7 +49,7 @@ public sealed record SeriesConfigurationTests
     public void IdHasGuidTypeConverter()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Id)
+            nameof(ChartSeriesEFCoreModel.Id)
         )!;
         _ = Assert.IsType<GuidTypeConverter>(property.GetValueConverter());
     }
@@ -56,7 +58,7 @@ public sealed record SeriesConfigurationTests
     public void IdHasGuidValueComparer()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Id)
+            nameof(ChartSeriesEFCoreModel.Id)
         )!;
         _ = Assert.IsType<GuidValueComparer>(property.GetValueComparer());
     }
@@ -65,7 +67,7 @@ public sealed record SeriesConfigurationTests
     public void LegendIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Legend)
+            nameof(ChartSeriesEFCoreModel.Legend)
         )!;
         Assert.False(property.IsNullable);
     }
@@ -74,7 +76,7 @@ public sealed record SeriesConfigurationTests
     public void LegendHasMaxLength64()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Legend)
+            nameof(ChartSeriesEFCoreModel.Legend)
         )!;
         Assert.Equal(64, property.GetMaxLength());
     }
@@ -83,7 +85,7 @@ public sealed record SeriesConfigurationTests
     public void LegendHasStringTypeConverter()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Legend)
+            nameof(ChartSeriesEFCoreModel.Legend)
         )!;
         _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
     }
@@ -92,7 +94,7 @@ public sealed record SeriesConfigurationTests
     public void LegendHasStringValueComparer()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.Legend)
+            nameof(ChartSeriesEFCoreModel.Legend)
         )!;
         _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
     }
@@ -101,7 +103,7 @@ public sealed record SeriesConfigurationTests
     public void XAxisSourceIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.XAxisSource)
+            nameof(ChartSeriesEFCoreModel.XAxisSource)
         )!;
         Assert.False(property.IsNullable);
     }
@@ -110,7 +112,7 @@ public sealed record SeriesConfigurationTests
     public void XAxisSourceHasStringTypeConverter()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.XAxisSource)
+            nameof(ChartSeriesEFCoreModel.XAxisSource)
         )!;
         _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
     }
@@ -119,7 +121,7 @@ public sealed record SeriesConfigurationTests
     public void XAxisSourceHasStringValueComparer()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.XAxisSource)
+            nameof(ChartSeriesEFCoreModel.XAxisSource)
         )!;
         _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
     }
@@ -128,7 +130,7 @@ public sealed record SeriesConfigurationTests
     public void YAxisSourceIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.YAxisSource)
+            nameof(ChartSeriesEFCoreModel.YAxisSource)
         )!;
         Assert.False(property.IsNullable);
     }
@@ -137,7 +139,7 @@ public sealed record SeriesConfigurationTests
     public void YAxisSourceHasStringTypeConverter()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.YAxisSource)
+            nameof(ChartSeriesEFCoreModel.YAxisSource)
         )!;
         _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
     }
@@ -146,7 +148,7 @@ public sealed record SeriesConfigurationTests
     public void YAxisSourceHasStringValueComparer()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.YAxisSource)
+            nameof(ChartSeriesEFCoreModel.YAxisSource)
         )!;
         _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
     }
@@ -155,7 +157,7 @@ public sealed record SeriesConfigurationTests
     public void ChartIdIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.ChartId)
+            nameof(ChartSeriesEFCoreModel.ChartId)
         )!;
         Assert.False(property.IsNullable);
     }
@@ -164,7 +166,7 @@ public sealed record SeriesConfigurationTests
     public void ChartIdHasGuidTypeConverter()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.ChartId)
+            nameof(ChartSeriesEFCoreModel.ChartId)
         )!;
         _ = Assert.IsType<GuidTypeConverter>(property.GetValueConverter());
     }
@@ -173,7 +175,7 @@ public sealed record SeriesConfigurationTests
     public void ChartIdHasGuidValueComparer()
     {
         IMutableProperty property = _entityType.FindProperty(
-            nameof(SeriesEFCoreModel.ChartId)
+            nameof(ChartSeriesEFCoreModel.ChartId)
         )!;
         _ = Assert.IsType<GuidValueComparer>(property.GetValueComparer());
     }
