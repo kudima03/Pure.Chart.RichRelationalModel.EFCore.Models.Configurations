@@ -19,13 +19,6 @@ public sealed record AxisConfiguration : IEntityTypeConfiguration<AxisEFCoreMode
             .Metadata.SetValueComparer(new GuidValueComparer());
 
         builder
-            .Property(x => x.ChartId)
-            .ValueGeneratedNever()
-            .IsRequired()
-            .HasConversion(new GuidTypeConverter())
-            .Metadata.SetValueComparer(new GuidValueComparer());
-
-        builder
             .Property(x => x.Legend)
             .IsRequired()
             .HasConversion(new StringTypeConverter())
