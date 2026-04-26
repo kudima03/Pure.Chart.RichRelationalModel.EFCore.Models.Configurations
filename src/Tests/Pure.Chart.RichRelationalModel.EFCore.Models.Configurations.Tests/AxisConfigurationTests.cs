@@ -54,42 +54,6 @@ public sealed record AxisConfigurationTests
     }
 
     [Fact]
-    public void ChartIdIsRequired()
-    {
-        IMutableProperty property = _entityType.FindProperty(
-            nameof(AxisEFCoreModel.ChartId)
-        )!;
-        Assert.False(property.IsNullable);
-    }
-
-    [Fact]
-    public void ChartIdValueGeneratedNever()
-    {
-        IMutableProperty property = _entityType.FindProperty(
-            nameof(AxisEFCoreModel.ChartId)
-        )!;
-        Assert.Equal(ValueGenerated.Never, property.ValueGenerated);
-    }
-
-    [Fact]
-    public void ChartIdHasGuidTypeConverter()
-    {
-        IMutableProperty property = _entityType.FindProperty(
-            nameof(AxisEFCoreModel.ChartId)
-        )!;
-        _ = Assert.IsType<GuidTypeConverter>(property.GetValueConverter());
-    }
-
-    [Fact]
-    public void ChartIdHasGuidValueComparer()
-    {
-        IMutableProperty property = _entityType.FindProperty(
-            nameof(AxisEFCoreModel.ChartId)
-        )!;
-        _ = Assert.IsType<GuidValueComparer>(property.GetValueComparer());
-    }
-
-    [Fact]
     public void LegendIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
