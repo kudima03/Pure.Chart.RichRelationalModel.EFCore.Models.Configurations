@@ -23,7 +23,7 @@
     />
     <PackageReference
       Include="Pure.Primitives.Abstractions.EFCore.Converters"
-      Version="0.1.0-preview.0.1.0"
+      Version="0.1.0-preview.0.1.2"
     />
     <PackageReference
       Include="Pure.Primitives.Abstractions.EFCore.ValueComparers"
