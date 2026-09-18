@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Pure.Chart.RichRelationalModel.EFCore.Models.Configurations.Tests/Pure.Chart.RichRelationalModel.EFCore.Models.Configurations.Tests.csproj" />
+  </Folder>
+  <Project Path="Pure.Chart.RichRelationalModel.EFCore.Models.Configurations/Pure.Chart.RichRelationalModel.EFCore.Models.Configurations.csproj" />
+</Solution>
