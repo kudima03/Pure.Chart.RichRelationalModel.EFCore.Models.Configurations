@@ -6,6 +6,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.5.0.0] — 2026-10-23
+
+### Added
+
+- **`ChartSeriesConfiguration`** now maps `ChartSeriesEFCoreModel.LineType`
+  as a required string column of at most 16 characters. Existing schemas
+  need a migration that adds the column.
+
+### Changed
+
+- Requires `Pure.Chart.RichRelationalModel.EFCore.Models`
+  0.1.0-preview.8.0.0.
+
 ## [0.1.0-preview.4.2.0] — 2026-10-23
 
 - Maintenance release: bumped Pure.Primitives.Abstractions.EFCore.Converters to 0.1.0-preview.0.2.0, packed README into the package, and derived assembly versions from the release tag.
