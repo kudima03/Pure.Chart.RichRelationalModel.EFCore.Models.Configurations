@@ -154,6 +154,42 @@ public sealed record ChartSeriesConfigurationTests
     }
 
     [Fact]
+    public void LineTypeIsRequired()
+    {
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartSeriesEFCoreModel.LineType)
+        )!;
+        Assert.False(property.IsNullable);
+    }
+
+    [Fact]
+    public void LineTypeHasMaxLength16()
+    {
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartSeriesEFCoreModel.LineType)
+        )!;
+        Assert.Equal(16, property.GetMaxLength());
+    }
+
+    [Fact]
+    public void LineTypeHasStringTypeConverter()
+    {
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartSeriesEFCoreModel.LineType)
+        )!;
+        _ = Assert.IsType<StringTypeConverter>(property.GetValueConverter());
+    }
+
+    [Fact]
+    public void LineTypeHasStringValueComparer()
+    {
+        IMutableProperty property = _entityType.FindProperty(
+            nameof(ChartSeriesEFCoreModel.LineType)
+        )!;
+        _ = Assert.IsType<StringValueComparer>(property.GetValueComparer());
+    }
+
+    [Fact]
     public void ChartIdIsRequired()
     {
         IMutableProperty property = _entityType.FindProperty(
