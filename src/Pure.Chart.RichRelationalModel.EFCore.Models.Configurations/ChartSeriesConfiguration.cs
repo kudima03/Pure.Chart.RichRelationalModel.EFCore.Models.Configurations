@@ -39,6 +39,13 @@ public sealed record ChartSeriesConfiguration
             .Metadata.SetValueComparer(new StringValueComparer());
 
         builder
+            .Property(x => x.LineType)
+            .IsRequired()
+            .HasConversion(new StringTypeConverter())
+            .HasMaxLength(16)
+            .Metadata.SetValueComparer(new StringValueComparer());
+
+        builder
             .Property(x => x.ChartId)
             .IsRequired()
             .HasConversion(new GuidTypeConverter())

@@ -20,7 +20,7 @@ Register all four configurations in `OnModelCreating` to persist the chart domai
 | `ChartConfiguration` | `ChartEFCoreModel` | GUID PK, Title and Description columns, TypeId/XAxisId/YAxisId FKs, one-to-many Series navigation |
 | `ChartTypeConfiguration` | `ChartTypeEFCoreModel` | GUID PK, Name column (max 128) |
 | `AxisConfiguration` | `AxisEFCoreModel` | GUID PK, Legend string column |
-| `ChartSeriesConfiguration` | `ChartSeriesEFCoreModel` | GUID PK, ChartId FK, Legend, XAxisSource and YAxisSource columns |
+| `ChartSeriesConfiguration` | `ChartSeriesEFCoreModel` | GUID PK, ChartId FK, Legend, XAxisSource, YAxisSource and LineType (max 16) columns |
 
 All `IGuid` and `IString` properties use converters from `Pure.Primitives.Abstractions.EFCore.Converters` and comparers from `Pure.Primitives.Abstractions.EFCore.ValueComparers`.
 
