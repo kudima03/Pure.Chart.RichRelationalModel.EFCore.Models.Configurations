@@ -6,6 +6,22 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.6.0.0] — 2026-11-03
+
+### Fixed
+
+- **`ChartConfiguration`** now relates a chart to its series through
+  `ChartSeriesEFCoreModel.ChartId` as a required one-to-many relationship
+  with cascade delete. Previously EF Core created an extra nullable
+  `ChartEFCoreModelId` column for the relationship and left `ChartId`
+  without a foreign key constraint.
+
+### Breaking Changes
+
+- Existing schemas need a migration: the series table drops the
+  `ChartEFCoreModelId` column and its `FK_Series_Charts_ChartEFCoreModelId`
+  foreign key, and gains `FK_Series_Charts_ChartId` with cascade delete.
+
 ## [0.1.0-preview.5.0.0] — 2026-10-23
 
 ### Added
