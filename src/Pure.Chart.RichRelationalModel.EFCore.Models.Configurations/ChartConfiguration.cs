@@ -48,5 +48,10 @@ public sealed record ChartConfiguration : IEntityTypeConfiguration<ChartEFCoreMo
             .HasOne(x => x.YAxisNavigation)
             .WithOne()
             .HasForeignKey<ChartEFCoreModel>(x => x.YAxisId);
+
+        _ = builder
+            .HasMany(x => x.SeriesNavigation)
+            .WithOne()
+            .HasForeignKey(x => x.ChartId);
     }
 }

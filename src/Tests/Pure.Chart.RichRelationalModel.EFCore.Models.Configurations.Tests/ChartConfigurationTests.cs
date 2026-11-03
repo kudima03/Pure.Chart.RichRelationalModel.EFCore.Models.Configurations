@@ -191,4 +191,17 @@ public sealed record ChartConfigurationTests
         Assert.True(fk.IsUnique);
         Assert.Equal(typeof(AxisEFCoreModel), fk.PrincipalEntityType.ClrType);
     }
+
+    [Fact]
+    public void HasOneToManyRelationshipWithSeriesOnChartId()
+    {
+        IMutableNavigation navigation = _entityType.FindNavigation(
+            nameof(ChartEFCoreModel.SeriesNavigation)
+        )!;
+        IMutableForeignKey fk = navigation.ForeignKey;
+        Assert.True(navigation.IsCollection);
+        Assert.Equal(typeof(ChartSeriesEFCoreModel), fk.DeclaringEntityType.ClrType);
+        _ = Assert.Single(fk.Properties);
+        Assert.Equal(nameof(ChartSeriesEFCoreModel.ChartId), fk.Properties[0].Name);
+    }
 }
