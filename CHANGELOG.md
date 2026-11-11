@@ -6,6 +6,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.6.1.0] — 2026-11-11
+
+### Added
+
+- Support for .NET 11 (`net11.0` target framework).
+
+### Changed
+
+- Updated `Pure.Chart.RichRelationalModel.EFCore.Models` to
+  `0.1.0-preview.9.0.0`, `Pure.Primitives.Abstractions.EFCore.Converters` to
+  `0.1.0-preview.0.3.0` and `Pure.Primitives.Abstractions.EFCore.ValueComparers`
+  to `0.1.0-preview.0.2.0`.
+
 ## [0.1.0-preview.6.0.0] — 2026-11-03
 
 ### Fixed
