@@ -90,14 +90,11 @@ public sealed record AxisConfigurationTests
     }
 
     [Fact]
-    public void LegendHasUniqueIndex()
+    public void LegendHasNoIndex()
     {
-        IMutableIndex? index = _entityType
-            .GetIndexes()
-            .FirstOrDefault(i =>
-                i.Properties.Any(p => p.Name == nameof(AxisEFCoreModel.Legend))
-            );
-        Assert.NotNull(index);
-        Assert.True(index.IsUnique);
+        Assert.DoesNotContain(
+            _entityType.GetIndexes(),
+            i => i.Properties.Any(p => p.Name == nameof(AxisEFCoreModel.Legend))
+        );
     }
 }
