@@ -6,6 +6,20 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.7.0.0] — 2026-11-21
+
+### Changed
+
+- **`AxisConfiguration`** no longer declares a unique index on `Legend`, so
+  several axes may carry the same legend. Each chart already has its own axes
+  (one-to-one per role), and the unique legend kept two charts from both
+  having an axis called "Month".
+
+### Breaking Changes
+
+- Existing schemas need a migration: the axes table drops the
+  `IX_Axes_Legend` unique index.
+
 ## [0.1.0-preview.6.1.0] — 2026-11-11
 
 ### Added
