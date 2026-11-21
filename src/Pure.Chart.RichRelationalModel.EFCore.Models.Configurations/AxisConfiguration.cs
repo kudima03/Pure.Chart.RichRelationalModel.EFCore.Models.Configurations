@@ -24,7 +24,5 @@ public sealed record AxisConfiguration : IEntityTypeConfiguration<AxisEFCoreMode
             .HasConversion(new StringTypeConverter())
             .HasMaxLength(64)
             .Metadata.SetValueComparer(new StringValueComparer());
-
-        _ = builder.HasIndex(x => x.Legend).IsUnique();
     }
 }
